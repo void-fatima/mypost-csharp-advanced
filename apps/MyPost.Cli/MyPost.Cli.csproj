@@ -4,6 +4,8 @@
     <RootNamespace>MyPost.Cli</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <ProjectReference Include="..\..\src\MyPost.Application\MyPost.Application.csproj" />
+    <ProjectReference Include="..\..\src\MyPost.Infrastructure\MyPost.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
