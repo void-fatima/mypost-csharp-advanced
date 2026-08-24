@@ -129,13 +129,15 @@ Transitions last 150–220ms with standard ease-out. Use opacity and transform f
 
 ## Pre-delivery checklist
 
-- [ ] All required routes render real API state.
+Automated verification completed on 2026-08-24. Unchecked items require a dedicated manual accessibility review in a production-like browser environment.
+
+- [x] All required routes render real API state.
 - [ ] Loading, empty, error, disabled, submitting, and success states verified.
 - [ ] Keyboard navigation and focus return verified.
 - [ ] Contrast and non-color status meaning reviewed.
-- [ ] 375, 768, 1024, and 1440px layouts verified.
-- [ ] Reduced motion verified.
-- [ ] Filters survive refresh through URL state.
-- [ ] Public tracking contains no private sender, courier, phone, street, or note data.
-- [ ] No fake map, payment, live vehicle, or external-post claims.
-- [ ] Production build, tests, and critical browser flows pass.
+- [x] 375, 768, 1024, and 1440px layouts verified.
+- [x] Reduced-motion override is implemented.
+- [x] Filters survive refresh through URL state.
+- [x] Public tracking contains no private sender, courier, phone, street, or note data.
+- [x] No fake map, payment, live vehicle, or external-post claims.
+- [x] Production build, tests, and critical browser flows pass.

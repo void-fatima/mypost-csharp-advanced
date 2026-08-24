@@ -110,13 +110,13 @@ The initial migration is committed under `src/MyPost.Infrastructure/Persistence/
 
 ```powershell
 dotnet tool restore
-dotnet ef database update --project src/MyPost.Infrastructure --startup-project apps/MyPost.Api
+dotnet ef database update --project src/MyPost.Infrastructure
 ```
 
 To create a future migration:
 
 ```powershell
-dotnet ef migrations add MeaningfulName --project src/MyPost.Infrastructure --startup-project apps/MyPost.Api
+dotnet ef migrations add MeaningfulName --project src/MyPost.Infrastructure
 ```
 
 ## Quality checks
