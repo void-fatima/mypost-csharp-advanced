@@ -2,11 +2,11 @@ namespace ConsoleApp.Models;
 
 public class ParcelPost
 {
-    public Letter Letter { get; set; }
-    public string Name { get; set; } // Receiver's full name
-    public string Address { get; set; }
-    public string ReceiverPostalCode { get; set; }
-    public string SenderPostalCode { get; set; }
+    public Letter Letter { get; set; } = null!;
+    public string Name { get; set; } = string.Empty; // Receiver's full name
+    public string Address { get; set; } = string.Empty;
+    public string ReceiverPostalCode { get; set; } = string.Empty;
+    public string SenderPostalCode { get; set; } = string.Empty;
     public bool IsReturned { get; set; }
 
     // DONT remove default constructor
@@ -14,11 +14,16 @@ public class ParcelPost
 
     public ParcelPost(Letter letter, string name, string address, string receiverPostalCode, string senderPostalCode, bool isReturned)
     {
-        throw new NotImplementedException();
+        Letter = letter ?? throw new ArgumentNullException(nameof(letter));
+        Name = name;
+        Address = address;
+        ReceiverPostalCode = receiverPostalCode;
+        SenderPostalCode = senderPostalCode;
+        IsReturned = isReturned;
     }
 
     public static void SaveToFile(Queue<ParcelPost> parcelQueue, string filePath)
     {
-        throw new NotImplementedException();
+        JsonFileStorage.Save(parcelQueue, filePath);
     }
 }

@@ -2,28 +2,37 @@ namespace ConsoleApp.Models;
 
 public class Letter
 {
-    public string LetterId { get; set; }
-    public string Text { get; set; }
-    public string ReceiverFullName { get; set; }
-    public string SenderFullName { get; set; }
-    
+    public string LetterId { get; set; } = string.Empty;
+    public string Text { get; set; } = string.Empty;
+    public string ReceiverFullName { get; set; } = string.Empty;
+    public string SenderFullName { get; set; } = string.Empty;
+
     public Letter(string text, string receiverFullName, string senderFullName, string letterId)
     {
-        throw new NotImplementedException();
+        Text = text;
+        ReceiverFullName = receiverFullName;
+        SenderFullName = senderFullName;
+        LetterId = letterId;
     }
 
     public bool Validate()
     {
-        throw new NotImplementedException();
+        return !string.IsNullOrWhiteSpace(LetterId)
+               && !string.IsNullOrWhiteSpace(Text)
+               && !string.IsNullOrWhiteSpace(ReceiverFullName)
+               && !string.IsNullOrWhiteSpace(SenderFullName);
     }
 
     public static Dictionary<string, Letter> LoadFromFile(string filePath)
     {
-        throw new NotImplementedException();
+        return JsonFileStorage.LoadDictionary<Letter>(
+            filePath,
+            letter => letter.LetterId,
+            letter => letter.Validate());
     }
-    
+
     public static void SaveToFile(List<Letter> letters, string filePath)
     {
-        throw new NotImplementedException();
+        JsonFileStorage.Save(letters, filePath);
     }
 }
