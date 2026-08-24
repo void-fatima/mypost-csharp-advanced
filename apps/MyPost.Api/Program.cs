@@ -14,7 +14,7 @@ using MyPost.Infrastructure.Persistence;
 
 namespace MyPost.Api;
 
-public static class Program
+public partial class Program
 {
     public static async Task Main(string[] args)
     {
